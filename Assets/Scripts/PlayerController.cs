@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
+    private static string moving = "isMoving";
 
     public float walkSpeed = 5F;
     Vector2 moveInput;
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
         private set
         {
             _isMoving = value;
-            animator.SetBool("isMoving", value);
+            animator.SetBool(moving, value);
         } 
     }
 
