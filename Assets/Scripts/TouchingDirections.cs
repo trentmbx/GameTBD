@@ -32,6 +32,7 @@ public class TouchingDirections : MonoBehaviour
         } 
     }
 
+    [SerializeField]
     private bool _isOnWall;
 
     public bool IsOnWall { get
@@ -45,6 +46,7 @@ public class TouchingDirections : MonoBehaviour
         } 
     }
 
+    [SerializeField]
     private bool _isOnCeiling;
 
     public bool IsOnCeiling { get
