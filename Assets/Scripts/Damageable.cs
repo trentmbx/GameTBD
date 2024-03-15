@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 public class Damageable : MonoBehaviour
 {
@@ -94,6 +95,23 @@ public class Damageable : MonoBehaviour
 
             animator.SetTrigger(AnimationStrings.hitTrigger);
             damageableHit?.Invoke(damage, knockback);
+            return true;
+        }
+        return false;
+    }
+
+    public bool Heal(int healAmount)
+    {
+        if (!IsAlive && Health < MaxHealth)
+        {
+            if(Health + healAmount >= MaxHealth)
+            {
+                Health = MaxHealth;
+            }
+            else
+            {
+                Health += healAmount;
+            }
             return true;
         }
         return false;
